@@ -295,3 +295,20 @@ h3{
     cursor: pointer;
     background-color:#4096ff;
 }
+.input-containerOpt{
+    display: flex;           
+    align-items: center;     
+    border: 1px solid #ccc;    
+    border-radius: 4px;         
+    padding: 5px 10px;         
+    background-color: white;   
+    width: 400px;           
+    box-sizing: border-box; 
+    gap: 20px;
+}
+.input-containerOpt input{
+    padding: 6px;
+    border:1px solid #ffa5a5 ;
+    border-radius: 4px;
+
+}

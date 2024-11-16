@@ -55,10 +55,19 @@ function App() {
       <div className='showpassword-container'>
           <Input type={"showPassword"} placeholder={"Fill YOUR PASSWORD"}/>
       </div>
+
+      <div className='input-containerOpt'>
+              <Input width={"30px"}/>
+              <Input width={"30px"}/>
+              <Input width={"30px"}/>
+              <Input width={"30px"}/>
+              <Input width={"30px"}/>
+              <Input width={"30px"}/>
+      </div>
   
       <p>{value}</p>  
     </>
-  )
+  )  
 }
 
 export default App
