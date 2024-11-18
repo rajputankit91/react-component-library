@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import './App.css'
-import Input from './input/input'
+import SelectInput from './Select/select'
+// import Input from './input/input'
 
 function App() {
   const [value, setValue] = useState('')
   return (
     <>
-      <h3>Normal type Input</h3>
+      {/* <h3>Normal type Input</h3>
       <div className='input-container'>
         <Input placeholder={"Basic usage"} className={"simple-input"} type={"text"} onchange={(e) => setValue(e.target.value)} />
       </div>
@@ -72,7 +73,9 @@ function App() {
         <Input className={"warning-show"} placeholder={"Warning"} />
       </div>
   
-      <p>{value}</p>
+      <p>{value}</p> */}
+
+      <SelectInput />
     </>
   )
 }
