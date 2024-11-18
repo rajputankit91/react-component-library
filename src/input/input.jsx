@@ -42,7 +42,7 @@ export default function Input({ type, value, placeholder, onchange, width, heigh
         backicon = <FaEyeSlash />
     } else if(type === "showPassword"){
         showpassword = <span><span> <FaEyeSlash /></span> <span><button>Show</button> </span></span>
-    }
+    } 
 
     const inputField = (<input
         type={type}

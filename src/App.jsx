@@ -3,7 +3,7 @@ import './App.css'
 import Input from './input/input'
 
 function App() {
-  const [value,setValue] = useState('')
+  const [value, setValue] = useState('')
   return (
     <>
       <h3>Normal type Input</h3>
@@ -20,20 +20,20 @@ function App() {
         <Input placeholder={"Please Enter a Number"} className={"number-input"} type={"number"} />
       </div>
       <div className='twotype-inputContainer'>
-        <Input className={"small-input"} /><Input className={"medium-input"}/>
+        <Input className={"small-input"} /><Input className={"medium-input"} />
       </div>
       <div className='threetype-inputConatiner'>
-        <Input type={"search"} className={"inner"} placeholder={"Large-Size"} /> <Input className={"outer"} placeholder={"Another-Size"}/>
+        <Input type={"search"} className={"inner"} placeholder={"Large-Size"} /> <Input className={"outer"} placeholder={"Another-Size"} />
       </div>
 
       <div className='threetype-inputConatiner'>
-        <Input type={"search"} className={"innersecond-com"} placeholder={"Large-Size"} value={"https://"}/> <Input className={"outersecond-com"} placeholder={"Another-Size"}/>
+        <Input type={"search"} className={"innersecond-com"} placeholder={"Large-Size"} value={"https://"} /> <Input className={"outersecond-com"} placeholder={"Another-Size"} />
       </div>
       <div className='input-container'>
-        <Input type={"spinner"} className={"simple-input"} placeholder={"input Search Loading default"}/>
+        <Input type={"spinner"} className={"simple-input"} placeholder={"input Search Loading default"} />
       </div>
       <div className='inputSpinnerbtn-container'>
-          <Input type={"spinnerbutton"} className={"simple-input"} placeholder={"input Search Loading default"}/>
+        <Input type={"spinnerbutton"} className={"simple-input"} placeholder={"input Search Loading default"} />
       </div>
 
       <div className='inputSpinner-container'>
@@ -41,33 +41,40 @@ function App() {
       </div>
 
       <div className='btnsearch'>
-        <Input type={"searchbtn"} placeholder={"Search"}/>
+        <Input type={"searchbtn"} placeholder={"Search"} />
       </div>
 
       <div className='mictype-conatiner'>
-          <Input type={"mic"} placeholder={"Search with Mic"}/>
+        <Input type={"mic"} placeholder={"Search with Mic"} />
       </div>
 
       <div className='passwordIcon-container'>
-        <Input type={"passwordIcon"} placeholder={"Input Password"}/>
-      </div>   
+        <Input type={"passwordIcon"} placeholder={"Input Password"} />
+      </div>
 
       <div className='showpassword-container'>
-          <Input type={"showPassword"} placeholder={"Fill YOUR PASSWORD"}/>
+        <Input type={"showPassword"} placeholder={"Fill YOUR PASSWORD"} />
       </div>
 
       <div className='input-containerOpt'>
-              <Input width={"30px"}/>
-              <Input width={"30px"}/>
-              <Input width={"30px"}/>
-              <Input width={"30px"}/>
-              <Input width={"30px"}/>
-              <Input width={"30px"}/>
+        <Input width={"30px"} />
+        <Input width={"30px"} />
+        <Input width={"30px"} />
+        <Input width={"30px"} />
+        <Input width={"30px"} />
+        <Input width={"30px"} />
+      </div>
+
+      <div className='error'>
+        <Input className={"error-show"} placeholder={"Error"} />
+      </div>
+      <div className='warning'>
+        <Input className={"warning-show"} placeholder={"Warning"} />
       </div>
   
-      <p>{value}</p>  
+      <p>{value}</p>
     </>
-  )  
+  )
 }
 
 export default App
