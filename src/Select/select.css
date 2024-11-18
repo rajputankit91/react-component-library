@@ -1,0 +1,10 @@
+select{
+    width: 200px;
+    padding: 6px;
+    border: solid 1px #ccc;
+    outline: none;
+}
+
+option{
+    background-color: #ffff;
+}

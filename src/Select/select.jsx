@@ -1,7 +1,15 @@
-export default function SelectInput(){
+import './select.css'
+export default function SelectInput({label,onchange,defaultvalue,options,disable,className}){
     return(
         <>
-        <h2>sELECT </h2>
+            <label>{label}</label>
+            <select value={defaultvalue} onChange={onchange} disabled={disable} className={className}>
+                {
+                    options.map((option) => (
+                        <option value={option.value}>{option.label}</option>
+                    ))
+                }
+            </select>
         </>
     )
 }
