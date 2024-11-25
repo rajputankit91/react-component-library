@@ -7,7 +7,7 @@
 :root {
     --gap: 20px;
     --button-width: 130px;
-    /* --button-height: 45px; */
+    --button-height: 45px; 
     --font-size: 14px; 
     --font-size1: 18px;
     --font-size2: 15px;
@@ -23,47 +23,52 @@
     --color10: #ff4d4f;
     --color11: #ffa39e;
     --color12: #ffccc7;
+    --color13: gray;
     --border-radius: 5px;
     --hover-color1: #4096ff;
     --hover-color2: rgb(0 0 0 / 75%);
 }
-
-body{
-    width: 1000px;
-    border: solid;
-    /* background-color: #efeded; */
-}
-
-/* .div1 {
+button {
     display: flex;
-    flex-direction: row;
-    gap: 20px; 
+    justify-content: center;
     align-items: center;
-} */
-
-.Default {
     border: none;
     background-color: var(--color2);
     color: black;
     width: var(--button-width);
     height: var(--button-height);
     border-radius: var(--border-radius);
-    font-size: var(--font-size);
     cursor: pointer;
     transition: all 0.3s ease;
-    border: 1px solid gray;
 }
 
+
+
+.Examplebutton {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; 
+    align-items: center;
+}
+.exampleBtnWithColor{
+    /* border: solid; */
+    display: flex;
+    flex-direction: row;
+    gap: 20px; 
+    align-items: center;
+}
+
+.Default {
+    transition: all 0.3s ease;
+}
 .Default:active {
     transform: scale(0.98);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
-
 .Default:focus {
     outline: none;
     box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
 }
-
 .Default:hover {
     color: #1890ff;
     border: solid 1px #1890ff;
@@ -71,59 +76,37 @@ body{
 
 
 .Primary {
-    border: none;
-    background-color: var(--color1);
-    color: white;
-    width: var(--button-width);
-    height: var(--button-height);
-    border-radius: var(--border-radius);
-    font-size: var(--font-size);
-    cursor: pointer;
     transition: all 0.3s ease;
 }
-
 .Primary:active {
     transform: scale(0.98);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
-
 .Primary:focus {
     outline: none;
     box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
 }
-
 .Primary:hover {
     background-color: var(--hover-color1);
 }
 
 
 .dashed {
-    border: none;
-    background-color: var(--default-color);
-    color: black;
-    width: var(--button-width);
-    height: var(--button-height);
-    border-radius: var(--border-radius);
-    font-size: var(--font-size);
-    cursor: pointer;
-    transition: all 0.3s ease;
     border: 1px solid gray;
-    border-top: 1px dotted gray;
-    border-left: 1px dotted gray;
-    border-right: 1px dotted gray;
-    border-bottom: 1px dotted gray;
+    border-Top: 1px dotted gray;
+    border-Left: 1px dotted gray;
+    border-Right: 1px dotted gray;
+    border-Bottom: 1px dotted gray;
+    transition: all 0.3s ease;
 }
-
 .dashed:active {
     transform: scale(0.98);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
-
 .dashed:focus {
     outline: none;
     box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
 }
-
 .dashed:hover {
     color: #1890ff;
     border-top: 1px dotted #1890ff;
@@ -133,29 +116,19 @@ body{
 }
 
 .text {
-    border: none;
-    background-color: var(--color2);
-    color: black;
-    width: var(--button-width);
-    height: var(--button-height);
-    border-radius: var(--border-radius);
-    font-size: var(--font-size);
-    cursor: pointer;
     transition: all 0.3s ease;
 }
-
 .text:focus {
     outline: none;
     box-shadow: var(--color3);
 }
-
 .text:active {
     transform: scale(0.98);
 }
-
 .text:hover {
     background-color: var(--color7);
 }
+
 
 .link {
     border: none;
@@ -168,37 +141,25 @@ body{
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
 .link:active {
     transform: scale(0.98);
 }
-
 .link:hover {
     color: #1890ff;
 }
 
+
 .solid {
-    border: none;
-    background-color: var(--color4);
-    color: white;
-    width: var(--button-width);
-    height: var(--button-height);
-    border-radius: var(--border-radius);
-    font-size: var(--font-size);
-    cursor: pointer;
     transition: all 0.3s ease;
 }
-
 .solid:active {
     transform: scale(0.98);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
-
 .solid:focus {
     outline: none;
     box-shadow: 0 0 0 2px rgba(25, 29, 32, 0.2);
 }
-
 .solid:hover {
     background-color: var(--hover-color2);
 }
@@ -442,7 +403,7 @@ body{
 }
 
 .solid-2:hover {
-    background-color: var(--hover-color1);
+    background-color: var(--color12);
 }
 
 
@@ -457,17 +418,14 @@ body{
     transition: all 0.3s ease;
     border: solid 1px var(--color10);
 }
-
 .outlined-2:active {
     transform: scale(0.98);
     box-shadow: 0 4px 8px #0958d9;
 }
-
 .outlined-2:focus {
     outline: none;
     box-shadow: 0 0 0 2px rgba(44, 144, 221, 0.2);
 }
-
 .outlined-2:hover {
     border: 1px solid var(--color10);
     color: var(--color10);
@@ -490,17 +448,14 @@ body{
     border-right: 1px dotted var(--color10);
     border-bottom: 1px dotted var(--color10);
 }
-
 .dashed-2:active {
     transform: scale(0.98);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
-
 .dashed-2:focus {
     outline: none;
     box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
 }
-
 .dashed-2:hover {
     color: var(--color10);
     border-top: 1px dotted var(--color10);
@@ -520,18 +475,16 @@ body{
     transition: all 0.3s ease;
     border: none;
 }
-
 .filled-2:focus {
     outline: none;
     box-shadow: var(--color3);
 }
-
 .filled-2:active {
     transform: scale(0.98);
 }
-
 .filled-2:hover {
-    background-color: var(--color9);
+    background-color: var(--color10);
+    color: var(--color2);
 }
 
 .text-2 {
@@ -545,18 +498,15 @@ body{
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
 .text-2:focus {
     outline: none;
     box-shadow: var(--color3);
 }
-
 .text-2:active {
     transform: scale(0.98);
 }
-
 .text-2:hover {
-    background-color: var(--color8);
+    background-color: var(--color12);
 }
 
 
@@ -571,74 +521,222 @@ body{
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
 .link-2:active {
     transform: scale(0.98);
 }
-
 .link-2:hover {
-    color: #1890ff;
+    color: var(--color10);
 }
 
 
 /* buttonsIcons */
-.buttonIcons{
-    border: solid;
+.buttonIcons {
+    /* border: solid red; */
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.buttonIcons button{
-    border: solid;
-}
-.search{
-    /* border: solid red !important; */
-    width: 40px;
-    height: 39px;   
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50px;
-    font-size: 18px;
-    font-weight: bold;
-    background-color: var(--color1);
-    color: var(--color2);
-}
-.A{
-    width: 40px;
-    height: 39px;   
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50px;
-    font-size: 18px;
-    font-weight: bold;
-    background-color: var(--color1);
-    color: var(--color2);
-}
-
 .icon-text-container {
     display: flex;
-    align-items: center; 
     justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: var(--font-size);
+}
+
+.search, .A {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: var(--color1);
+    color: var(--color2);
+    border: 1px solid var(--color1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.search:focus {
+    outline: none;
+    box-shadow: var(--color3);
+}
+.search:active {
+    transform: scale(0.98);
+}
+.search:hover {
+    background-color: var(--hover-color1);
+}
+
+.search1 {
+    border: none;
+    background-color: var(--color1);
+    color: white;
+    width: var(--button-width);
+    height: var(--button-height);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.search1:focus {
+    outline: none;
+    box-shadow: var(--color3);
+}
+.search1:active {
+    transform: scale(0.98);
+}
+.search1:hover {
+    background-color: var(--color5);
+}
+
+.search2 {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 18px;
+    background-color: var(--color2);
+    color: var(--color4);
+    border: 1px solid gray;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.search2:focus {
+    outline: none;
+    box-shadow: var(--color3);
+}
+.search2:hover {
+    color: var(--color1);
+    border: 1px solid var(--color1);
+}
+
+.search3 {
+    border: solid;
+    border: 1px solid gray;
+    background-color: var(--color2);
+    color: var(--color4);
+    width: var(--button-width);
+    height: var(--button-height);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.search3:focus {
+    outline: none;
+    box-shadow: var(--color3);
+}
+.search3:active {
+    transform: scale(0.98);
+}
+.search3:hover {
+    border: 1px solid var(--color1);
+    color: var(--color1);
+}
+
+
+.search4 {
+    background-color: var(--color2);
+    color: var(--color4);
+    width: var(--button-width);
+    height: var(--button-height);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.search4:focus {
+    outline: none;
+    box-shadow: var(--color3);
+}
+.search4:active {
+    transform: scale(0.98);
+}
+.search4:hover {
+    background-color: var(--color7);
 }
 
 
 
+.search5 {
+    background-color: var(--color2);
+    color: var(--color4);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: var(--font-size);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid gray;
+    border-Top: 1px dotted gray;
+    border-Left: 1px dotted gray;
+    border-Right: 1px dotted gray;
+    border-Bottom: 1px dotted gray;
+}
+.search5:focus {
+    outline: none;
+    box-shadow: var(--color3);
+}
+.search5:active {
+    transform: scale(0.98);
+}
+.search5:hover {
+    color: var(--color1);
+    border: 1px solid var(--color1);
+    border-Top: 1px dotted var(--color1);
+    border-Left: 1px dotted var(--color1);
+    border-Right: 1px dotted var(--color1);
+    border-Bottom: 1px dotted var(--color1);
+}
 
 
+.search6 {
+    border: none;
+    background-color: var(--default-color);
+    color: var(--color4);
+    width: var(--button-width);
+    height: var(--button-height);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid var(--color13);
+    border-top: 1px dotted var(--color13);
+    border-left: 1px dotted var(--color13);
+    border-right: 1px dotted var(--color13);
+    border-bottom: 1px dotted var(--color13);
+}
+.search6:active {
+    transform: scale(0.98);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+.search6:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+.search6:hover {
+    color: var(--color1);
+    border-top: 1px dotted var(--color1);
+    border-left: 1px dotted var(--color1);
+    border-right: 1px dotted var(--color1);
+    border-bottom: 1px dotted var(--color1);
+}
 
 
+/* downloadwala */
+.btnDownLoad{
+    /* border: solid; */
+    display: flex;
+    flex-direction: row;
+}
 
-
-
-
-
-
-
-
-
-
-
-
+/* buttonDisable */
+.btnDisable button:disabled{
+    background-color: #ddd;
+    cursor: not-allowed;
+    color: gray;
+}
