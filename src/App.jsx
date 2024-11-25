@@ -18,12 +18,22 @@ function App() {
   return (
     <>
         <h3>Select Option</h3>
-        <SelectInput defaultvalue={selectValue} options={options} onchange={handleChange} />
+        <SelectInput defaultvalue={selectValue} options={options} onchange={handleChange} variant={'primary'}/>
 
         <h3>Select Option with Disable mode</h3>
-        <SelectInput defaultvalue={"Option-1"} options={options} onchange={handleChange} disable={true} />
+        <SelectInput  options={options} onchange={handleChange} disable={true} variant={"primary"}/>
 
         <h3>Select Option with Loading Icon</h3>
+        <SelectInput defaultvalue={selectValue} options={options} onchange={handleChange} variant = "loading after select"/>
+
+        <h3>Select Option with Cross Icon</h3>
+        <div>
+        <SelectInput variant={"cross icon"} options={[{value:"first",label:"Name"},{value:"second",label:"Class"}]} defaultvalue={"Yes"} />
+        </div>
+        <h3>Select option with Search Icon</h3>
+        <div>
+          <SelectInput variant={"primary"} options={[{value:"One",label:"One"},{value:"thrid",label:"Thrid"}]}/>
+        </div>
     </>
   )
 }

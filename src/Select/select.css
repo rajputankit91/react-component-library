@@ -1,10 +1,36 @@
-select{
-    width: 200px;
-    padding: 6px;
-    border: solid 1px #ccc;
-    outline: none;
+.select-container{
+  position: relative;
+  display: inline-block;
 }
 
-option{
-    background-color: #ffff;
+.wrapper-conatiner {
+  position: relative;
+  /* display: flex; */
+  align-items: center;
 }
+
+select {
+  appearance: none;
+  width: 140px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 7px;
+  font-size: 14px;
+  background-color: white;
+}
+
+.select-icon {
+  position: absolute;
+  right: 10px;
+  font-size: 18px;
+  color: #666;
+  top: 8px;
+  pointer-events: none;
+  align-items: center;
+}
+
+select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
