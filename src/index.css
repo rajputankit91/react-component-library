@@ -1,0 +1,10 @@
+
+:root {
+  --primary-color:#391085,
+  --second-color:#e3e2e2,
+  --white-color:#ffffff,
+  --black-color:#000000,
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --border-radius:5px,
+  --button-disabled: rgba(0, 0, 0, 0.15);
+}
