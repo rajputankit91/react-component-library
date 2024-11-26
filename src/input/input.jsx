@@ -12,7 +12,7 @@ export default function Input({ type, value, placeholder, onchange, width, heigh
         padding: padding,
         fontSize: fontSize,
         backgroundColor: backgroundColor,
-        color: color
+        color: color,
     }
 
     let icon = null;
