@@ -1,94 +1,145 @@
-import './App.css'
-import Button from './Components/button'
-import { IoIosSearch } from "react-icons/io";
-
+import { useState } from 'react';
+import './App.css';
+import Radio from './Components/Radio';
 
 function App() {
+  const [value, setValue] = useState(''); 
+  const [value1, setValue1] = useState('1');
+  const [value2, setValue2] = useState('1');
+  const [value3, setValue3] = useState('1');
+  const [value4, setValue4] = useState('1');
+  const [value5, setValue5] = useState('1');
+  const [value6, setValue6] = useState('1');
+  const [value7, setValue7] = useState('1');
+  const [selected, setSelected] = useState(false);
 
-  const handleButton = () => {
-    confirm('This is my libary button');
+  const toogleDisable = () => {
+    alert('Toggle disabled');
+  }
+
+  const onChange = (e) => {
+    setValue(e.target.value);
+  }
+
+  const onChangeVerticalRadio = (e) => {
+    setValue1(e.target.value);
+    if (e.target.value === '4') {
+      setSelected(true);
+    } else {
+      setSelected(false);
+    }
+  }
+
+  const handleblockDiv1 = (e) => {
+    setValue2(e.target.value);
+  }
+
+  const handleblockDiv2 = (e) => {
+    setValue3(e.target.value);
+  }
+
+  const handleblockDiv3 = (e) => {
+    setValue4(e.target.value);
+  }
+
+  const handleRadioStyle1 = (e) => {
+    setValue5(e.target.value);
+  }
+
+  const handleRadioStyle2 = (e) => {
+    setValue6(e.target.value);
+  }
+
+  const handleRadioStyle3 = (e) => {
+    setValue7(e.target.value);
   }
 
   return (
-    <div className='button-main-container'>
-      <div className='div1'>
-        <h3>Example Of Button</h3>
-        <Button className="Default" type="default">Default Button</Button>
-        <Button className="Primary" type="primary">Primary Button</Button>
-        <Button className="dashed" type='dashed'>Dashed Button</Button>
-        <Button className="text" type='text'>Text Button</Button>
-        <Button className="link" type='link'>Link Button</Button>
-      </div>
-      
-      <div>
-        <h3>Button Event</h3>
-        <Button className="Default" type='default' onClick={handleButton}>Click Button</Button>
-      </div>
-      <div>
-        <h3>Button with Color</h3>
+    <>
+      <h1>Examples</h1>
+      <div className='radio-main-container'>
+        <div className='simpleRadio'>
+          <h3>Basic</h3>
+          <Radio value="1" checked={value === '1'} onChange={onChange}>Radio</Radio>
+        </div>
+
         <div>
-          <Button className="solid" type='primary'>Solid</Button>
-          <Button className="outlined" type='outlined'>Outlined</Button>
-          <Button className="dashed" type='dashed'>Dashed</Button>
-          <Button className="filled" type='filled'>Filled</Button>
-          <Button className="text" type='text'>Text</Button>
-          <Button className="link" type='link'>Link</Button>
+          <h3>Disabled</h3>
+          <div className='disablebtnClass'>
+            <Radio disabled>Disabled</Radio>
+            <Radio disabled>Disabled</Radio>
+          </div>
+          <button onClick={toogleDisable}>Toggle disabled</button>
         </div>
+
+        <div className='radio-Group-container'>
+          <h3>Radio Group</h3>
+          <div className='radioGroup' onChange={onChange}>
+            <Radio value="1" checked={value === '1'}>A</Radio>
+            <Radio value="2" checked={value === '2'}>B</Radio>
+            <Radio value="3" checked={value === '3'}>C</Radio>
+            <Radio value="4" checked={value === '4'}>D</Radio>
+          </div>
+        </div>
+
+        <div className='vertical-radio-Group-container'>
+          <h3>Vertical Radio.Group</h3>
+          <div className='verticalRadioGroup' onChange={onChangeVerticalRadio}>
+            <Radio value="1" checked={value1 === '1'}>Option A</Radio>
+            <Radio value="2" checked={value1 === '2'}>Option B</Radio>
+            <Radio value="3" checked={value1 === '3'}>Option C</Radio>
+            <Radio value="4" checked={value1 === '4'}>More</Radio>
+            {selected && <input type="text" />}
+          </div>
+        </div>
+
         <div>
-          <Button className="solid-1" type='primary'>Solid</Button>
-          <Button className="outlined-1" type='outlined'>Outlined</Button>
-          <Button className="dashed-1" type='dashed'>Dashed</Button>
-          <Button className="filled-1" type='filled'>Filled</Button>
-          <Button className="text-1" type='text'>Text</Button>
-          <Button className="link-1" type='link'>Link</Button>
+          <h3>Block Radio.Group</h3>
+          <div className="blockRadioDiv1" onChange={handleblockDiv1}>
+            <Radio value="1" checked={value2 === '1'}>Apple</Radio>
+            <Radio value="2" checked={value2 === '2'}>Pear</Radio>
+            <Radio value="3" checked={value2 === '3'}>Orange</Radio>
+          </div>
+
+          <div className="blockRadioDiv2" onChange={handleblockDiv2}>
+            <Radio value="1" checked={value3 === '1'}>Apple</Radio>
+            <Radio value="2" checked={value3 === '2'}>Pear</Radio>
+            <Radio value="3" checked={value3 === '3'}>Orange</Radio>
+          </div>
+
+          <div className="blockRadioDiv3" onChange={handleblockDiv3}>
+            <Radio value="1" checked={value4 === '1'}>Apple</Radio>
+            <Radio value="2" checked={value4 === '2'}>Pear</Radio>
+            <Radio value="3" checked={value4 === '3'}>Orange</Radio>
+          </div>
         </div>
+
         <div>
-          <Button className="solid-2" type='primary'>Solid</Button>
-          <Button className="outlined-2" type='outlined'>Outlined</Button>
-          <Button className="dashed-2" type='dashed'>Dashed</Button>
-          <Button className="filled-2" type='filled'>Filled</Button>
-          <Button className="text-2" type='text'>Text</Button>
-          <Button className="link-2" type='link'>Link</Button>
+          <h3>Radio Style</h3>
+          <div className='radioStyleDiv1' onChange={handleRadioStyle1}>
+            <Radio value="1" checked={value5 === '1'} >Hangzhou</Radio>
+            <Radio value="2" checked={value5 === '2'}>Shanghai</Radio>
+            <Radio value="3" checked={value5 === '3'}>Beijing</Radio>
+            <Radio value="4" checked={value5 === '4'}>Chengdu</Radio>
+          </div>
+
+          <div className='radioStyleDiv2' onChange={handleRadioStyle2}>
+            <Radio value="1" checked={value6 === '1'}>Hangzhou</Radio>
+            <Radio value="2" checked={value6 === '2'} disabled={true}>Shanghai</Radio>
+            <Radio value="3" checked={value6 === '3'}>Beijing</Radio>
+            <Radio value="4" checked={value6 === '4'}>Chengdu</Radio>
+          </div>
+
+          <div className='radioStyleDiv3' onChange={handleRadioStyle3}>
+            <Radio value="1" checked={value7 === '1'}>Hangzhou</Radio>
+            <Radio value="2" checked={value7 === '2'}>Shanghai</Radio>
+            <Radio value="3" checked={value7 === '3'}>Beijing</Radio>
+            <Radio value="4" checked={value7 === '4'}>Chengdu</Radio>
+          </div>
         </div>
       </div>
-
-      <div>
-        <h3>Button With Icon</h3>
-        <div className='buttonIcons'>
-          <Button className="search" type="search" icon={<IoIosSearch />}></Button>
-          <Button className="A" type="primary">A</Button>
-          <Button icon={<IoIosSearch />} type="search"  >Search</Button>
-          <Button icon={<IoIosSearch />} type="search"></Button>
-          <Button icon={<IoIosSearch />} type="search">Search</Button>
-          <Button icon={<IoIosSearch />} type="search"></Button>
-          <Button icon={<IoIosSearch />} type="search">Search</Button>
-          <Button icon={<IoIosSearch />} type="search"></Button>
-          <Button icon={<IoIosSearch />} type="search">Search</Button>
-          <Button icon={<IoIosSearch />} type="search"></Button>
-        </div>
-      </div>
-
-      <div>
-        <h3>Button With Positions Icon</h3>
-        <div className='buttonIcons'>
-          <Button className="search" type="search" icon={<IoIosSearch />}></Button>
-          <Button className="A" type="primary">A</Button>
-          <Button icon={<IoIosSearch />} type="searchBack" >Search</Button>
-          <Button icon={<IoIosSearch />} type="searchBack" ></Button>
-          <Button icon={<IoIosSearch />} type="searchBack" >Search</Button>
-          <Button icon={<IoIosSearch />} type="searchBack" ></Button>
-          <Button icon={<IoIosSearch />} type="searchBack" >Search</Button>
-          <Button icon={<IoIosSearch />} type="searchBack" ></Button>
-          <Button icon={<IoIosSearch />} type="searchBack" >Search</Button>
-          <Button icon={<IoIosSearch />} type="searchBack" ></Button>
-        </div>
-      </div>
-
-
-    </div>
-  )
+    </>
+  );
 }
 
-export default App
-
-
+export default App;
