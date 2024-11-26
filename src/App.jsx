@@ -1,32 +1,10 @@
 import { useState } from 'react'
 import './App.css'
 import Input from './input/input'
-import Image from './image component/Image'
 function App() {
   const [value, setValue] = useState('')
   return (
     <>
-      <Image
-        src="https://png.pngtree.com/thumb_back/fh260/background/20240327/pngtree-3d-hindu-god-ganpati-image-with-green-nature-background-image_15695930.jpg"
-        alt="Example"
-        variant="circle"
-        zoom={true}
-      />
-
-      <Image
-        src="https://png.pngtree.com/thumb_back/fh260/background/20240327/pngtree-3d-hindu-god-ganpati-image-with-green-nature-background-image_15695930.jpg"
-        alt="Example"
-        variant="rounded"
-        zoom={false}
-      />
-
-      <Image
-        src="https://png.pngtree.com/thumb_back/fh260/background/20240327/pngtree-3d-hindu-god-ganpati-image-with-green-nature-background-image_15695930.jpg"
-        alt="Example"
-        variant="rounded"
-        zoom={false}
-      />
-
       <h3>Normal type Input</h3>
       <div className='input-container'>
         <Input placeholder={"Basic usage"} className={"simple-input"} type={"text"} onchange={(e) => setValue(e.target.value)} />
