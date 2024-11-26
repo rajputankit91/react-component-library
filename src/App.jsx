@@ -32,8 +32,26 @@ function App() {
         </div>
         <h3>Select option with Search Icon</h3>
         <div>
-          <SelectInput variant={"primary"} options={[{value:"One",label:"One"},{value:"thrid",label:"Thrid"}]}/>
+          <SelectInput variant={"secondary"} options={[{value:"Select a Value",label:"Select a Value"},{value:"thrid",label:"Thrid"},
+            {value:"four",label:"four"},
+            {value:"five",label:"Five"},
+            {value:"six",label:"Six"}
+          ]}/>
         </div>
+
+        <h3>input Option with Drown</h3>
+        <div>
+        <SelectInput variant={"secondary"} options={[{value:"Select a Value",label:"Select a Value"},{value:"thrid",label:"Thrid"},
+            {value:"four",label:"four"}
+          ]}/>
+        </div>
+
+        <h3>Input Placeholder with Options</h3>
+        <SelectInput options={[{value:"one",label:"Jan"},{value:"two",label:"Feb"},{value:"three",label:"March"}]} 
+        variant={"select with search"} contenteditable={'true'}/>
+
+        <h3>Multiple Select</h3>
+        <SelectInput multiple={"true"} options={[{value:"One",label:"Satyam"},{value:"One",label:"Mohit"},{value:"One",label:"Ankit"}]} />
     </>
   )
 }
