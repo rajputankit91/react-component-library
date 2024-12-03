@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { memo, useState , useRef , useEffect} from 'react';
 import './App.css';
 import Radio from './Components/Radio';
 
 function App() {
-  const [value, setValue] = useState(''); 
+  const [value, setValue] = useState('1');
   const [value1, setValue1] = useState('1');
   const [value2, setValue2] = useState('1');
   const [value3, setValue3] = useState('1');
@@ -12,6 +12,8 @@ function App() {
   const [value6, setValue6] = useState('1');
   const [value7, setValue7] = useState('1');
   const [selected, setSelected] = useState(false);
+  const [inputValue, setInputValue] = useState('');
+  const inputRef = useRef(null);
 
   const toogleDisable = () => {
     alert('Toggle disabled');
@@ -20,7 +22,6 @@ function App() {
   const onChange = (e) => {
     setValue(e.target.value);
   }
-
   const onChangeVerticalRadio = (e) => {
     setValue1(e.target.value);
     if (e.target.value === '4') {
@@ -28,7 +29,7 @@ function App() {
     } else {
       setSelected(false);
     }
-  }
+  };
 
   const handleblockDiv1 = (e) => {
     setValue2(e.target.value);
@@ -54,6 +55,16 @@ function App() {
     setValue7(e.target.value);
   }
 
+  useEffect(() => {
+    if (selected && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [selected]);
+
+  const handleInputValue = (e) => {
+    setInputValue(e.target.value);
+  };
+
   return (
     <>
       <h1>Examples</h1>
@@ -63,7 +74,7 @@ function App() {
           <Radio value="1" checked={value === '1'} onChange={onChange}>Radio</Radio>
         </div>
 
-        <div>
+        <div className='disabled-div'>
           <h3>Disabled</h3>
           <div className='disablebtnClass'>
             <Radio disabled>Disabled</Radio>
@@ -89,11 +100,11 @@ function App() {
             <Radio value="2" checked={value1 === '2'}>Option B</Radio>
             <Radio value="3" checked={value1 === '3'}>Option C</Radio>
             <Radio value="4" checked={value1 === '4'}>More</Radio>
-            {selected && <input type="text" />}
           </div>
+          {selected && <input ref={inputRef} type="text" value={inputValue} onChange={handleInputValue} />}
         </div>
 
-        <div>
+        <div className='block-radio-div'>
           <h3>Block Radio.Group</h3>
           <div className="blockRadioDiv1" onChange={handleblockDiv1}>
             <Radio value="1" checked={value2 === '1'}>Apple</Radio>
@@ -114,7 +125,7 @@ function App() {
           </div>
         </div>
 
-        <div>
+        <div className='radio-style-div'>
           <h3>Radio Style</h3>
           <div className='radioStyleDiv1' onChange={handleRadioStyle1}>
             <Radio value="1" checked={value5 === '1'} >Hangzhou</Radio>

@@ -9,7 +9,7 @@ const Radio = ({ value, checked, onChange , children , disabled,className }) => 
         checked={checked}
         onChange={onChange}
         disabled={disabled}
-        className={className}
+        className={className} 
       />
       <p>{children}</p>
     </label>
