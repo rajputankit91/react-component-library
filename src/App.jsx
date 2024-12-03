@@ -53,6 +53,8 @@ function App() {
         <h3>Multiple Select</h3>
         <SelectInput multiple={"true"} options={[{value:"One",label:"Satyam"},{value:"One",label:"Mohit"},{value:"One",label:"Ankit"}]} />
         <h3>Hello</h3>
+        <input type='radio' />
+        <p>Check</p>
     </>
   )
 }
