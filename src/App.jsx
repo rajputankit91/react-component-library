@@ -1,10 +1,12 @@
 import './App.css'
+import DatePicker from './DatePicker/datePicker'
 
 function App() {
   
   return (
     <>
-      <h3>Welcome to Date Picker Component</h3>
+      <h2>Welcome to Date Picker Component</h2>
+      <DatePicker />
     </>
   )
 }
